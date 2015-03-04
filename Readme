@@ -1,0 +1,15 @@
+Instruction:
+1-Copy the file HaltRebootDaemon.sh in /etc/init.d
+2-Copy the dir HaltRebootDaemon in /usr/local/bin
+3-Set the chmod of all the file to 744
+4-Launch the command "sudo rc-update.d HaltRebootDaemon.sh defaults"
+5-Reboot
+
+The command "sudo /etc/init.d/HaltRebootDaemon.sh status" give the status of the daemon
+Other Parameter of the command are start|stop|restart
+
+Input/Output necessary for the python script:
+-Push button that close to Ground (Input in Pull-up) connected to GPIO28 
+-Green LED (active with +3.3V from the output) connected to GPIO29
+-Red LED (active with +3.3V from the output) connected to GPIO29
+
