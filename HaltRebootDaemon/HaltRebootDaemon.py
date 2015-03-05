@@ -78,7 +78,7 @@ class MyLogger(object):
 #GPIO Configuration
 
 class InOut(object):
-    def __init__(self,id,type, onEventPressed="", onEventDeressed="", BounceTimeout=20):
+    def __init__(self,id,type, onEventPressed=None, onEventDeressed=None, BounceTimeout=20):
         if ((type==GPIO.IN) or (type==GPIO.OUT)):
             self.id=id
             self.type=type
@@ -89,8 +89,8 @@ class InOut(object):
             self.blinkdutycicle=0
             self.BounceTimeOut=0
             self.LastIn=0
-            self.EventPressed=""
-            self.EventDeressed=""
+            self.EventPressed=None
+            self.EventDeressed=None
             self.BouceTime=get_ms_time()
             self.EventRised=1
             GPIO.setup(self.id,self.type)
@@ -172,9 +172,9 @@ class InOut(object):
                     if ( (self.BounceTimeOut==0) or (timeout_ms_expired(self.BouceTime,self.BounceTimeOut)) ):
 
                         if (self.CurrIn==1):
-                            self.EventDeressed(self.id)
+                            if(self.EventDeressed!=None): self.EventDeressed(self.id)
                         else:
-                            self.EventPressed(self.id)
+                            if(self.EventPressed!=None): self.EventPressed(self.id)
                         
                         self.EventRised=1
                         
