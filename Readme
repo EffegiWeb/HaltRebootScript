@@ -1,3 +1,6 @@
+-------------------------------- THIS ISTRUCTIONS ARE TESTED ON RASPBIAN WHEEZY ------------------
+
+
 Instruction:
 1-Copy the file HaltRebootDaemon.sh in /etc/init.d
 2-Copy the dir HaltRebootDaemon in /usr/local/bin
