@@ -14,5 +14,5 @@ Other Parameter of the command are start|stop|restart
 Input/Output necessary for the python script:
 -Push button that close to Ground (Input in Pull-up) connected to GPIO28 
 -Green LED (active with +3.3V from the output) connected to GPIO29
--Red LED (active with +3.3V from the output) connected to GPIO29
+-Red LED (active with +3.3V from the output) connected to GPIO30
 
